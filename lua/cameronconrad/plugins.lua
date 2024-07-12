@@ -1,5 +1,5 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-local utils = require("austinwilcox.utils")
+local utils = require("cameronconrad.utils")
 
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
@@ -321,7 +321,7 @@ local plugins = {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			require("austinwilcox.lsp")
+			require("cameronconrad.lsp")
 		end,
 	},
 	{

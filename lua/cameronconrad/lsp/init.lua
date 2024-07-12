@@ -1,4 +1,4 @@
-local nmap = require("austinwilcox.keymap").nmap
+local nmap = require("cameronconrad.keymap").nmap
 
 local has_lsp, _ = pcall(require, "lspconfig")
 if not has_lsp then
