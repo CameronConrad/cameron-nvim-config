@@ -289,8 +289,7 @@ local plugins = {
 	},
 	{
 		"williamboman/mason.nvim",
-		config = function()
-			require("mason").setup({
+    opts = {
 				ensure_installed = {
 					"tsserver",
 					"cssls",
@@ -308,14 +307,13 @@ local plugins = {
 					"html",
 					"netcoredbg",
 				},
-				automatic_installation = true,
-			})
-		end,
+    }
 	},
   {
     "nvim-java/nvim-java",
     config = function()
       require('java').setup()
+      require('lspconfig').jdtls.setup{}
     end,
   },
 	{

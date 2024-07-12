@@ -76,9 +76,8 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 --   on_attach = custom_attach
 -- })
 
--- Java Setup
-require('java').setup()
-require('lspconfig').jdtls.setup({})
+-- Java Setup 
+-- Currently set up in plugins using nvim-java
 
 -- Lua Setup
 require'lspconfig'.lua_ls.setup({
