@@ -71,10 +71,21 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 -- })
 
 -- Rust Setup
--- require'lspconfig'.rust_analyzer.setup({
---   capabilities = capabilities,
---   on_attach = custom_attach
--- })
+require'lspconfig'.rust_analyzer.setup({
+  capabilities = capabilities,
+  on_attach = custom_attach,
+  settings = {
+    ['rust-analyzer'] = {
+      diagnostics = {
+        enable = false;
+      }
+    }
+  },
+  cmd = { "rust-analyzer" },
+  filetypes = { "rust" },
+  root_dir = require'lspconfig'.util.root_pattern("Cargo.toml"),
+  single_file_support = true
+})
 
 -- Java Setup 
 -- Currently set up in plugins using nvim-java

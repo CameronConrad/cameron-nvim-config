@@ -6,6 +6,7 @@ vim.g.mapleader = " "
 local noremap_options = { noremap = true }
 
 --NOTE: Sensible remaps, some from the Primeagen
+map('x', 'p', '"_dP', noremap_options)
 map('v', 'K', ':m \'<-2<CR>gv=gv', noremap_options)
 map('v', 'J', ':m \'>+1<CR>gv=gv', noremap_options)
 map('i', '<C-j>', '<esc>:m .+1<CR>==', noremap_options)
