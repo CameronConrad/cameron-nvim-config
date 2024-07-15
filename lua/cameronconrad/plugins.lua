@@ -15,6 +15,9 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
   {
+    'ThePrimeagen/vim-be-good',
+  },
+  {
     "eatgrass/maven.nvim",
     cmd = { "Maven", "MavenExec" },
     dependencies = "nvim-lua/plenary.nvim",
@@ -289,48 +292,45 @@ local plugins = {
 	},
 	{
 		"williamboman/mason.nvim",
-    opts = {
+		config = function()
+			require("mason").setup({
 				ensure_installed = {
 					"tsserver",
 					"cssls",
 					"denols",
 					"lua_ls",
-					"rust-analyzer",
+					"rust_analyzer",
 					"vls",
 					"gopls",
 					"marksman",
 					"bashls",
 					"eslint",
 					"jsonls",
-					"tailwindcss-language-server",
+					"tailwindcss",
 					"graphql",
 					"html",
 					"netcoredbg",
 				},
-    }
+				automatic_installation = true,
+			})
+		end,
 	},
+  {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+  },
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
 			require("cameronconrad.lsp")
 		end,
 	},
-  {
-    "nvim-java/nvim-java",
-    config = function()
-      require('java').setup()
-      require('lspconfig').jdtls.setup{}
-    end,
-  },
 	{
 		"nvimtools/none-ls.nvim",
 		dependencies = {
 			"nvimtools/none-ls-extras.nvim",
 		},
-    sources = {
-      "eslint_d",
-      "eslint-lsp",
-    },
 		config = function()
 			local null_ls = require("null-ls")
 			null_ls.setup({
@@ -338,7 +338,7 @@ local plugins = {
 					null_ls.builtins.formatting.stylua,
 					null_ls.builtins.formatting.prettier,
           null_ls.builtins.completion.spell,
-					require("none-ls.diagnostics.eslint_d"),
+					require("none-ls.diagnostics.eslint"),
 				},
 			})
 
@@ -808,8 +808,3 @@ local opts = {}
 
 require("lazy").setup(plugins, opts)
 
-local colorscheme = "terafox"
-local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
-if not status_ok then
-  vim.notify("colorscheme " .. colorscheme .. " not found!")
-end

@@ -63,6 +63,8 @@ map('n', '<leader>ff', '<cmd>Telescope find_files<cr>', noremap_options)
 map('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', noremap_options)
 map('n', '<leader>fb', '<cmd>Telescope buffers<cr>', noremap_options)
 map('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', noremap_options)
+map('n', '<leader>fc', '<cmd>Telescope current_buffer_fuzzy_find<cr>', noremap_options)
+map('n', '<leader>fd', '<cmd>Telescope diagnostics<cr>', noremap_options)
 
 --NOTE: Emacs window hopping
 map('n', '<leader>wh', ':wincmd h<CR>', noremap_options)
