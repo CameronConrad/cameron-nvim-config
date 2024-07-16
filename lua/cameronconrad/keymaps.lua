@@ -114,4 +114,16 @@ vim.cmd([[
 ]])
 
 --NOTE: Keymap to exit out of a file in normal mode
-vim.keymap.set('n', '-', ':Ex<CR>', { noremap = true, silent = false })
+vim.keymap.set('n', '-', ':Ex<CR>', noremap_options)
+
+--NOTE: LSP Keybindings
+-- vim.keymap.set('n', 'K', vim.lsp.buf.hover, noremap_options)
+-- vim.keymap.set('n', 'gd', vim.lsp.buf.definition, noremap_options)
+-- vim.keymap.set('n', '<leader>gn', vim.diagnostic.goto_next, noremap_options)
+-- vim.keymap.set('n', '<leader>gp', vim.diagnostic.goto_prev, noremap_options)
+-- vim.keymap.set('n', '<leader>gr', vim.lsp.buf.rename, noremap_options)
+-- vim.keymap.set('n', '<leader>gR', vim.lsp.buf.references, noremap_options)
+-- vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, noremap_options)
+-- vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, noremap_options)
+-- vim.keymap.set('n', '<leader>gl', '<cmd>Telescope diagnostics<cr>', noremap_options)
+-- vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, noremap_options)
