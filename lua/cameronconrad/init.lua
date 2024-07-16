@@ -4,4 +4,4 @@ require("cameronconrad.plugins")
 require("cameronconrad.luasnip-config")
 require("cameronconrad.worktrees")
 require("cameronconrad.harpoon")
-
+require("cameronconrad.colorscheme")
