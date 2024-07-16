@@ -68,4 +68,15 @@ require("mason-lspconfig").setup_handlers {
   function (server_name) -- default handler (optional)
     require("lspconfig")[server_name].setup {}
   end,
+
+}
+
+require('lspconfig').setup{
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { "vim"}
+      }
+    }
+  }
 }
