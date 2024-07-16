@@ -465,12 +465,13 @@ local plugins = {
 	},
 	{
 		"MunifTanjim/prettier.nvim",
-		ft = { "css", "scss", "jsx", "tsx", "js", "html", "ts", "json", "graphql", "yaml", "markdown" },
+		ft = { "css", "py", "scss", "jsx", "tsx", "js", "html", "ts", "json", "graphql", "yaml", "markdown" },
 		config = function()
 			require("prettier").setup({
 				bin = "prettier",
 				filetypes = {
 					"css",
+          "python",
 					"graphql",
 					"html",
 					"javascript",
