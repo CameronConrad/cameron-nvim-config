@@ -494,17 +494,6 @@ local plugins = {
 		end,
 	},
 	{
-		"folke/tokyonight.nvim",
-		lazy = false,
-		priority = 1000,
-	},
-	{
-		"Mofiqul/dracula.nvim",
-	},
-	{
-		"EdenEast/nightfox.nvim",
-	},
-	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = {
 			"kyazdani42/nvim-web-devicons",
@@ -810,6 +799,8 @@ if utils.OS() == "unix" then
 		end,
 	})
 end
+
+table.insert(plugins, require("cameronconrad.colorschemes"));
 
 local opts = {}
 
