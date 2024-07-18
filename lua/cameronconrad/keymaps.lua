@@ -20,6 +20,7 @@ map("n", "n", "nzz", noremap_options)
 map("n", "rm{", "di{va{p", noremap_options)
 map("n", "rm[", "di[va[p", noremap_options)
 map("n", "rm(", "di(va(p", noremap_options)
+map("n", "rm<", "di<va<p", noremap_options)
 
 --NOTE: Lua output date for zettels
 -- map('n', '<leader>z', ':lua print_current_date()<cr>', noremap_options)
