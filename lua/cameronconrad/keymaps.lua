@@ -16,6 +16,11 @@ map("n", "<leader>j", ":m .+1<CR>==", noremap_options)
 map("n", "Y", "y$", noremap_options)
 map("n", "n", "nzz", noremap_options)
 
+--NOTE: Experimental remaps
+map("n", "rm{", "di{va{p", noremap_options)
+map("n", "rm[", "di[va[p", noremap_options)
+map("n", "rm(", "di(va(p", noremap_options)
+
 --NOTE: Lua output date for zettels
 -- map('n', '<leader>z', ':lua print_current_date()<cr>', noremap_options)
 -- function print_current_date()
@@ -25,8 +30,10 @@ map("n", "n", "nzz", noremap_options)
 --   local line = unpack(lines)
 --   vim.api.nvim_buf_set_lines(0, r-1, r, -1, {current_date .. line})
 -- end
-map("n", "<leader>zn", ":ObsidianNew ", noremap_options)
-map("n", "<leader>zt", ":ObsidianTemplate<cr>", noremap_options)
+
+--NOTE: Obsidian remaps
+-- map("n", "<leader>zn", ":ObsidianNew ", noremap_options)
+-- map("n", "<leader>zt", ":ObsidianTemplate<cr>", noremap_options)
 
 --NOTE: Helix inspired mappings
 map("n", "gl", "$", noremap_options)
