@@ -15,6 +15,12 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
   {
+    "CRAG666/code_runner.nvim",
+    config = function()
+      require("cameronconrad.code-runner")
+    end,
+  },
+  {
     'ThePrimeagen/vim-be-good',
   },
   {
