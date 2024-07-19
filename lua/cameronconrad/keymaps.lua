@@ -139,3 +139,7 @@ vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, noremap_options)
 
 --NOTE: Format Code
 vim.keymap.set("n", "<leader>pc", vim.lsp.buf.format, noremap_options)
+
+--NOTE: Note taking
+vim.keymap.set("i", "<D-.>", "<esc>^i  • ", noremap_options)
+vim.keymap.set("n", "<D-.>", "^i	• ", noremap_options)
