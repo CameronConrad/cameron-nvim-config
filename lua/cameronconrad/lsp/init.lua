@@ -1,25 +1,13 @@
-local has_lsp, _ = pcall(require, "lspconfig")
+local has_lsp, lspconfig = pcall(require, "lspconfig")
 if not has_lsp then
   return
 end
 
-require "lsp_signature".setup({
-  bind = true, -- This is mandatory, otherwise border config won't get registered.
-  handler_opts = {
-    border = "rounded"
-  }
+lspconfig.ts_ls.setup({
+  filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
 })
 
-require("mason-lspconfig").setup_handlers {
-  -- The first entry (without a key) will be the default handler
-  -- and will be called for each installed server that doesn't have
-  -- a dedicated handler.
-  function (server_name) -- default handler (optional)
-    require("lspconfig")[server_name].setup {}
-  end,
-}
-
-require('lspconfig').lua_ls.setup{
+vim.lsp.config('lua_ls', {
   settings = {
     Lua = {
       diagnostics = {
@@ -27,4 +15,4 @@ require('lspconfig').lua_ls.setup{
       }
     }
   }
-}
+})

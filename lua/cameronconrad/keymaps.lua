@@ -116,12 +116,6 @@ map("n", "gP", ':lua require("goto-preview").close_all_win()<CR>', noremap_optio
 --NOTE: Only set if you have telescope installed
 map("n", "gpr", ':lua require("goto-preview").goto_preview_references()<CR>', noremap_options)
 
---NOTE: Autocommands
-vim.cmd([[
-  autocmd FileType markdown setlocal wrap
-  autocmd FileType markdown setlocal linebreak
-]])
-
 --NOTE: Keymap to exit out of a file in normal mode
 vim.keymap.set("n", "-", ":Ex<CR>", noremap_options)
 
